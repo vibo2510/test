@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-sm-12 col-md-6 col-md-offset-3">
+        <h1>{{title}}</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12 col-md-6 col-md-offset-3">
+        <table class="table">
+        {{# each kino1.sitzreihen}}
+            <tr >
+            {{#each this}}
+                {{# if this.isFree}}
+                    <th class="success">
+                {{else}}
+                        <th class="danger">
+                {{/if}}
+                <a href="/kaufen/{{ this._id }}/{{this.isFree}}">{{this.nummer}}</a>
+                </th>
+            {{/each}}
+            </tr>
+        {{/each}}
+        </table>
+    </div>
+</div>
